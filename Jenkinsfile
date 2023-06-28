@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo "Test Step  -- Testing2  pipeliname=====  ${env.JOB_NAME}"
+                echo "Test Step  -- Testing2  pipeliname=====  ${env.JOB_NAME}    branchName == ${env.BRANCH_NAME}"
                 snDevOpsChange();
                 script {
                    number=snDevOpsGetChangeNumber (changeDetails: """{ "pipeline_name": "${env.JOB_NAME}", "build_number": "${env.BUILD_NUMBER}", "stage_name": "Test", "branch_name": "${env.BRANCH_NAME}" }""");                  
