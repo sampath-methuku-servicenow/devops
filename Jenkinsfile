@@ -16,6 +16,11 @@ pipeline {
                    number=snDevOpsGetChangeNumber (changeDetails: """{ "pipeline_name": "${env.JOB_NAME}", "build_number": "${env.BUILD_NUMBER}", "stage_name": "Build", "branch_name": "${env.BRANCH_NAME}" }""");                  
                     echo "Change Number =="+number;
                  echo "Chnage nUMBER===="+number
+
+
+                    number2=snDevOpsGetChangeNumber (changeDetails :"""{"stage_name": "Build"}""");
+                    echo "Chage Number 2==="+number2;
+                    
                 }
             }
         }
